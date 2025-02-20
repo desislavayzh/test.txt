@@ -1,0 +1,31 @@
+Input: size = 5
+Output:
+*****
+*   *
+*   *
+*   *
+*****
+Solution Steps
+Input the Size of the Square: The user specifies the size of the square.
+Use Nested Loops: The outer loop handles the rows, and the inner loop handles printing the stars and spaces for each row.
+Conditionally Print Stars and Spaces: Print stars at the boundary (first and last row, and first and last columns), while printing spaces inside the square.
+ Step 1: Input the size of the square
+let size = parseInt(prompt("Enter the size of the square: "));
+
+// Step 2: Outer loop for rows
+for (let i = 1; i <= size; i++) {
+    let output = '';
+    
+    // Step 3: Inner loop for columns
+    for (let j = 1; j <= size; j++) {
+        // Step 4: Print stars at the boundary, else print spaces
+        if (i === 1 || i === size || j === 1 || j === size) {
+            output += '*';
+        } else {
+            output += ' ';
+        }
+    }
+    
+    // Print the output for the current row
+    console.log(output);
+}
