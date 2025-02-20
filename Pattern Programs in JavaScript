@@ -1,0 +1,247 @@
+
+Explanation
+Step 1: Input the Size of the Square
+The program begins by asking the user to input the size of the square. The input is converted to an integer using parseInt().
+Step 2: Outer Loop for Rows
+The outer loop controls how many rows are printed. It runs from 1 to size.
+Step 3: Inner Loop for Columns
+The inner loop controls how many columns are printed in each row. It also runs from 1 to size.
+Step 4: Conditional Printing of Stars and Spaces
+Stars (*) are printed at the boundary of the square:
+On the first row (i === 1),
+On the last row (i === size),
+On the first column (j === 1),
+On the last column (j === size).
+Spaces are printed inside the square to create the hollow effect.
+For size = 5, the output will be:
+
+*****
+*   *
+*   *
+*   *
+*****
+For size = 4, the output will be:
+
+****
+*  *
+*  *
+****
+
+17 Star Pattern Programs in JavaScript (with code):
+Do you have a passion for JavaScript programming and a fascination with creating visually stunning patterns? Look no further than our website, "17 Star Pattern Programs in JavaScript (with code)." With an extensive collection of 17 unique star patterns, this website is a treasure trove for JavaScript enthusiasts seeking to challenge their coding skills while exploring the world of creative design.
+
+Our user-friendly interface ensures a seamless browsing experience, enabling you to navigate effortlessly through the collection of star patterns. The website's intuitive layout and clean design make it easy to understand and follow along, regardless of your programming expertise.
+
+Not only does the website serve as an educational resource, but it also encourages creativity and experimentation. Feel free to modify the existing code or customize the patterns to suit your artistic vision. The possibilities are endless, giving you the freedom to showcase your unique style and create personalized star patterns. Whether you're a student, a hobbyist, or a professional developer, our website provides an exciting and engaging platform to refine your JavaScript skills while indulging in the joy of creating captivating star patterns.
+
+Pattern 1: Left Triangle
+The Left Triangular Star Pattern involves printing a series of stars in a left-aligned triangular shape. As you progress through the pattern, the number of stars per line increases incrementally, forming a triangular structure. This pattern is an excellent exercise for understanding loops, nested loops, and conditional statements in JavaScript.
+
+Preview:
+*
+* *
+* * *
+* * * *
+* * * * *
+To create a Left Triangular Star Pattern in JavaScript, you can follow these steps:
+
+Start by defining a variable to store the desired number of rows for the pattern.
+Implement a loop that iterates from 1 to the specified number of rows.
+Within the loop, employ a nested loop to print the stars on each line. The number of stars on each line corresponds to the current row number.
+Display the pattern by printing the stars on each line, separated by spaces or any desired delimiter.
+By incorporating these steps into your JavaScript code, you can generate a beautiful Left Triangular Star Pattern.
+let num = 5;
+let pattern = "";    //pattern string
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= i; j++) {      //second 'for loop' to print star
+            pattern += "* ";    //adding * to pattern string
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+Pattern 2: Hollow Left Triangle
+The Hollow Left Triangular Star Pattern involves printing a series of stars in a left-aligned triangular shape while leaving empty spaces within the triangle. This pattern showcases your mastery of loops, nested loops, and conditional statements in JavaScript, allowing you to create intricate and aesthetically pleasing designs.
+
+Preview:
+*
+* *
+*   *
+*     *
+* * * * *
+To create a Hollow Left Triangular Star Pattern in JavaScript, follow these steps:
+
+Begin by defining a variable to store the desired number of rows for the pattern.
+Implement a loop that iterates from 1 to the specified number of rows.
+Within the loop, use a nested loop to print the stars and spaces on each line. The number of stars on each line corresponds to the current row number, while the spaces represent the hollow areas.
+Incorporate conditional statements to determine when to print a star or a space, based on the pattern's requirements.
+Display the pattern by printing the stars and spaces on each line, creating the hollow triangular shape.
+By following these steps and tweaking the code, you can generate a stunning Hollow Left Triangular Star Pattern in JavaScript.
+let num = 5;
+let pattern = "";    //pattern string
+if (num > 1) {      //no star pattern for 0 or negative numbers
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= i; j++) {      //second 'for loop' to print star and space between them
+            if (j==1 || j==i || i==num) {   //condition to make it hollow
+                pattern += "* ";
+            }
+            else{
+                pattern += "  ";
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+Pattern 3: Downward Left Triangle
+The Downward Left Triangular Star Pattern involves printing a series of stars in a left-aligned triangular shape, but in a downward direction. As you progress through the pattern, the number of stars per line decreases incrementally, forming a reversed triangular structure. This pattern presents an excellent opportunity to practice loops, nested loops, and conditional statements in JavaScript.
+
+Preview:
+* * * * *
+* * * *
+* * *
+* *
+*
+To create a Downward Left Triangular Star Pattern in JavaScript, you can follow these steps:
+
+Start by defining a variable to store the desired number of rows for the pattern.
+Implement a loop that iterates from the specified number of rows to 1, decrementing by 1 in each iteration.
+Within the loop, use a nested loop to print the stars on each line. The number of stars on each line corresponds to the current row number.
+Display the pattern by printing the stars on each line, separated by spaces or any desired delimiter.
+By incorporating these steps into your JavaScript code, you can generate a captivating Downward Left Triangular Star Pattern.
+let num = 5;
+let pattern = "";    //pattern string
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 0; j <= (num-i); j++) {    //second 'for loop' for opposite pattern; see loop condition
+            pattern += "* ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+Pattern 4: Downward Hollow Left Triangle
+The Downward Hollow Left Triangular Star Pattern involves printing a series of stars in a left-aligned triangular shape, but in a downward direction, while leaving empty spaces within the triangle. This pattern provides an excellent opportunity to exercise your skills in loops, nested loops, and conditional statements in JavaScript, allowing you to create intricate and visually appealing designs.
+
+Preview:
+* * * * *
+*     *
+*   *
+* *
+*
+To create a Downward Hollow Left Triangular Star Pattern in JavaScript, follow these steps:
+
+Begin by defining a variable to store the desired number of rows for the pattern.
+Implement a loop that iterates from the specified number of rows to 1, decrementing by 1 in each iteration.
+Within the loop, use a nested loop to print the stars and spaces on each line. The number of stars on each line corresponds to the current row number, while the spaces represent the hollow areas.
+Incorporate conditional statements to determine when to print a star or a space, based on the pattern's requirements.
+Display the pattern by printing the stars and spaces on each line, creating the downward hollow triangular shape.
+By following these steps and customizing the code, you can generate a captivating Downward Hollow Left Triangular Star Pattern in JavaScript.
+let num = 5;
+let pattern = "";    //pattern string
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 0; j <= (num-i); j++) {    //second 'for loop' for opposite pattern
+            if (j==0 || j==(num-i) || i==1) {   //condition to make pattern hollow
+                pattern += "* ";
+            } else {
+                pattern += "  ";    // spaces to make pattern hollow
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+Pattern 5: Right Triangle
+The Right Triangular Star Pattern involves printing a series of stars in a triangular shape, with each line having an incrementally increasing number of stars from left to right. This pattern is an excellent opportunity to practice loops, nested loops, and conditional statements in JavaScript.
+
+Preview:
+        *
+      * *
+    * * *
+  * * * *
+* * * * *
+To create a Right Triangular Star Pattern in JavaScript, you can follow these steps:
+
+Begin by defining a variable to store the desired number of rows for the pattern.
+Implement a loop that iterates from 1 to the specified number of rows.
+Within the loop, use a nested loop to print the appropriate number of spaces at the beginning of each line. The number of spaces is determined by subtracting the current row number from the total number of rows.
+Use another nested loop to print the stars on each line. The number of stars on each line corresponds to the current row number.
+Use another nested loop to print the stars on each line. The number of stars on each line corresponds to the current row number.
+By incorporating these steps into your JavaScript code, you can generate a visually appealing Right Triangular Star Pattern.
+let num = 5;
+let pattern = "";    //pattern string
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <=num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= (num-i); j++) {    //second 'for loop' to add 'spaces' before pattern
+            pattern += "  ";
+        }
+
+        for (let k = 1; k <= i; k++) {      //third 'for loop' to add * to pattern string
+            pattern += "* ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+Pattern 6: Hollow Right Triangle
+The Hollow Right Triangular Star Pattern involves printing a series of stars in a right-aligned triangular shape while leaving empty spaces within the triangle. This pattern provides an excellent opportunity to practice loops, nested loops, and conditional statements in JavaScript, allowing you to create intricate and visually appealing designs.
+
+Preview:
+        *
+      * *
+    *   *
+  *     *
+* * * * *
+To create a Hollow Right Triangular Star Pattern in JavaScript, follow these steps:
+
+Start by defining a variable to store the desired number of rows for the pattern.
+Implement a loop that iterates from 1 to the specified number of rows.
+Within the loop, use a nested loop to print the spaces and stars on each line. The number of spaces on each line corresponds to the current row number minus one, while the stars are printed at the end of the line.
+Incorporate conditional statements to determine when to print a space or a star, based on the pattern's requirements.
+Incorporate conditional statements to determine when to print a space or a star, based on the pattern's requirements.
+By following these steps and customizing the code, you can generate a captivating Hollow Right Triangular Star Pattern in JavaScript.
+let num = 5;
+let pattern = "";    //pattern string
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <=num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= (num-i); j++) {    //second 'for loop' to add 'spaces' before pattern
+            pattern += "  ";
+        }
+
+        for (let k = 1; k <= i; k++) {      //third 'for loop' to add * to pattern string
+            if (k==1 || k==i || i==num) {   //third loop condition to make pattern hollow
+                pattern += "* ";    //adding outer * to pattern string
+            }
+            else{
+                pattern += "  ";    //adding spaces between * to pattern string
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
