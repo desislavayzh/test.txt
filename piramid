@@ -1,0 +1,87 @@
+let n = 5; // you can take input from prompt or change the value
+let string = "";
+// External loop
+for (let i = 0; i < n; i++) {
+  // printing spaces
+  for (let j = 0; j < i; j++) {
+    string += " ";
+  }
+  // printing star
+  for (let k = 0; k < 2 * (n-i) - 1; k++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);
+Output:
+
+*********
+ *******
+  *****
+   ***
+    *
+
+
+Demo 1:
+
+   *
+  ***
+ *****
+*******
+
+We will construct a pyramid of star (*) pattern with the help of for loop and nested for loop in the demo provided downwards.
+
+Code:
+
+let n = 6;  
+  
+for (let p = 1; p <= n; p++) {  
+  for (let q = 1; q <= n - p; q++) {  
+    process.stdout.write(' ')  
+  }  
+    
+  for (let m = 0; m < 2 * p - 1; m++) {  
+    process.stdout.write('*')  
+  }  
+    
+  console.log();  
+}  
+Explanation:
+
+First of all, we have constructed a variable n and assigned it an integer value. This value represents a total number of rows.
+We have constructed for loop which is utilized to iterate the total number of rows.
+Then we have constructed a nested for loop that prints space n-p times. If p is 4 then it will print 3 spaces.
+Then we have constructed another nested loop which is utilized to print stars (2 * p - 1) times. If value of p is 2 then it will print 3 stars.
+Output:
+
+Here is the output where we can witness that the pyramid of the star pattern is constructed using three for loops.
+
+Pyramid in JavaScript
+Demo 2:
+
+We will construct an upper pyramid star pattern utilizing a single for loop.
+
+Code:
+
+function createPyramid(rows) {  
+    let pyramid = '';  
+    for (let k = 0; k < rows; k++) {  
+        pyramid += ' '.repeat(rows - k - 1);  
+        pyramid += '*'.repeat(2 * k + 1);  
+        pyramid += '\n';  
+    }  
+    console.log(pyramid);  
+}  
+  
+createPyramid(6);  
+Explanation:
+
+First of all, we have created a function called "createPyramid" which has a parameter called "rows".
+Then under that function, we have declared a variable called "pyramid".
+We have then constructed for loop to iterate each row.
+for loop is utilized to first add spaces then adds star (*) and then breaks the line and moves to the next line.
+Output:
+
+Here in the output downwards we can witness that the pyramid star pattern is constructed with the assistance of a single loop.
+
+Pyramid in JavaScript
