@@ -1,0 +1,150 @@
+function myDiamond(){
+  let row, star;
+  let toPrint = "";
+  let rowCount = +prompt("Enter a number to make a diamond");
+  
+for (row = 1; row <= rowCount; row++){
+  for (star = 1; star <= row; star++){
+    if (star == 1 || star == row){
+    toPrint +="*";
+    } else {
+      toPrint += " ";
+    }
+  }
+  toPrint += "<br>";
+} 
+  document.getElementById("figure").innerHTML = toPrint;
+
+  for (row = rowCount; row >= 1; row--){
+    for (star = 1; star <= row; star++){
+    if (star == 1 || star == row){
+    toPrint +="*";
+    } else {
+      toPrint += " ";
+    }
+  toPrint += "<br>";
+} 
+
+  document.getElementById("figure").innerHTML = toPrint;
+}
+}
+javascriptloopsnested-loops
+Share
+Improve this question
+Follow
+asked Feb 27, 2021 at 20:08
+Luna Rupert's user avatar
+Luna Rupert
+3755 bronze badges
+What's the expected output? – 
+Praveen Kumar Purushothaman
+ CommentedFeb 27, 2021 at 20:11
+Add a comment
+2 Answers
+Sorted by:
+
+Highest score (default)
+1
+
+Is this what you're trying to do:
+
+function createDimondShape(size) {
+  var stuff = "";
+  for (var i = 1; i <= size; i++) {
+    for (var s = size - 1; s >= i; s--) {
+      stuff += (" ");
+    }
+    for (var j = 1; j <= i; j++) {
+      stuff += ("* ")
+    }
+    stuff += "\n";
+  }
+  if (i == size + 1) {
+    for (var i = 1; i <= size - 1; i++) {
+      for (var s = 1; s <= i; s++) {
+        stuff += (" ");
+      }
+      for (j = i; j <= size - 1; j++) {
+        stuff += ("* ");
+      }
+      stuff += "\n";
+    }
+  }
+  document.getElementById("figure").innerHTML = stuff;
+}
+createDimondShape(5);
+<pre id="figure"></pre>
+Expand snippet
+Couple of trials here:
+
+function createDimondShape(a, size) {
+  var stuff = "";
+  for (var i = 1; i <= size; i++) {
+    for (var s = size - 1; s >= i; s--) {
+      stuff += (" ");
+    }
+    for (var j = 1; j <= i; j++) {
+      stuff += ("* ")
+    }
+    stuff += "\n";
+  }
+  if (i == size + 1) {
+    for (var i = 1; i <= size - 1; i++) {
+      for (var s = 1; s <= i; s++) {
+        stuff += (" ");
+      }
+      for (j = i; j <= size - 1; j++) {
+        stuff += ("* ");
+      }
+      stuff += "\n";
+    }
+  }
+  document.getElementById("figure" + a).innerHTML += stuff;
+}
+createDimondShape(1, 3);
+createDimondShape(2, 7);
+.f {
+  display: flex;
+  flex-direction: row;
+}
+.f pre {
+  width: 45%;
+}
+<div class="f">
+  <pre id="figure1"></pre>
+  <pre id="figure2"></pre>
+</div>
+Expand snippet
+  *
+ ***
+*****
+ ***
+  *
+
+With prompt, as asked in the comments:
+
+function createDimondShape(size) {
+  var stuff = "";
+  for (var i = 1; i <= size; i++) {
+    for (var s = size - 1; s >= i; s--) {
+      stuff += (" ");
+    }
+    for (var j = 1; j <= i; j++) {
+      stuff += ("* ")
+    }
+    stuff += "\n";
+  }
+  if (i == size + 1) {
+    for (var i = 1; i <= size - 1; i++) {
+      for (var s = 1; s <= i; s++) {
+        stuff += (" ");
+      }
+      for (j = i; j <= size - 1; j++) {
+        stuff += ("* ");
+      }
+      stuff += "\n";
+    }
+  }
+  document.getElementById("figure").innerHTML = stuff;
+}
+createDimondShape(+prompt("Enter a number..."));
